@@ -29,23 +29,26 @@ void pNOT (int a){
 	printf("0x%x\n\n", ~a);
 }
 
-unsigned int replace_byte(unsigned x, int i, unsigned char b){
+unsigned int replace_byte(unsigned x, int i, unsigned short b){
 	int n = 0x000000FF;
-
-	printf("N is 0x%.8x\n", n);
+	int w = 8;
+                                    // (i, 2, b)
+	printf("N is 0x%.8x\n", n); // N is 0x000000FF
 	
-	printf("B is 0x%.8x\n", b);
+	printf("B is 0x%.8x\n", b); // B is 0x000000AB
 
-	n = n << 8*i;
-	printf("N to 0x%.8x\n", n);
+	printf("X is 0x%.8x\n", x); // X is 0x12345678
+
+	n = n << w*i;               // n = 0x000000FF << 16
+	printf("N to 0x%.8x\n", n); // N is 0x00FF0000
 	
-	b = (unsigned int)b << 8*i;
-        printf("B is 0x%.8x\n", b);
+	b = b << w*i;               // b = 0x000000AB << 16
+        printf("B is 0x%.8x\n", b); // b = 0x00AB0000 (getting 0x00000000)
 
-	x &= ~n;
-	printf("X is 0x%.8x\n", x);
+	x &= ~n;                    // x = 0x12345678 & 0xFF00FFFF
+	printf("X is 0x%.8x\n", x); // X is 0x12005678
 	 	
-	return x^b;
+	return x^b; //rtrn 0x12AB5678 (getting 0x12005678)
 	
 }
 
@@ -59,7 +62,7 @@ unsigned int replace_byte(unsigned x, int i, unsigned char b){
 
 int main(){
 	unsigned int a = 0x12345678;
-        unsigned char b = 0xAB;
+        unsigned short b = 0xAB;
 	
 /*
 	pAND(a,m<<8);
@@ -73,6 +76,9 @@ int main(){
 */
 	printf("rtrn 0x%x\n\n", replace_byte(a, 2, b));
 	printf("rtrn 0x%x\n\n", replace_byte(a, 0, b));
+	unsigned char f = 0xAB;
+	unsigned short g = 0x000000AB;
+	printf("char 0xAB == short 0x000000AB ? %i", f==g); 
 
 	return 0;
 }
