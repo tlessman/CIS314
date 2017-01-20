@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-mask least significant bits
+//mask least significant bits
 
 int lower_one_mask(int n){
 	
