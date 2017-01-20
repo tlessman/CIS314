@@ -57,37 +57,20 @@ Integer constants INT_MIN and INT_MAX.
 #include <stdio.h>
 
 int any_odd_one(unsigned x){
-		
-	//0x2
-	//0x00000010
-	//
-
-	
-	
-
+	int m = 0xAAAAAAAA;
+	return (x&m!=0);
+	;	
 }
 
 
 
 int main(){
-	unsigned a = 0;
-	unsigned b = 255;
-	printf("%i %i ", a, b);
-
-	a^=b;
-        printf("%i %i ", a, b);
-
-	b^=a;
-	printf("%i %i ", a, b);
-
-	a^=b;
-	printf("%i %i\n", a, b);
-
-
-	long l = 0xFFFFFFFF;
-        printf("%l size of %i\n", l, sizeof(l));
-
-
+	int i;
+	unsigned int arr[255];
+	for(i = 0; i<255; i++){
+		unsigned int a = i;
+        	printf("1 if there is a one in any odd bit of 0x%x, 0 if else: %i\n", a, any_odd_one(a)) ;
+	}
 
 	return 0;
 }
