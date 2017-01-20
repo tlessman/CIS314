@@ -32,6 +32,12 @@
  *     & with 0xAAAAAAAA
  *     if other than 0x0, it has odd one
  *
+ *	0x0:0000:0
+ *	0x1:0001:0
+ *	0x2:0010:1
+ *	0x3:0011:1
+ *
+ *
  *
 
 . Assumptions 
@@ -58,7 +64,8 @@ Integer constants INT_MIN and INT_MAX.
 
 int any_odd_one(unsigned x){
 	int m = 0xAAAAAAAA;
-	return (x&m!=0);
+	int n = 0xF0F0F0F0;
+	return (((x&n)&m)!=0);
 	;	
 }
 
