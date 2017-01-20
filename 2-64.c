@@ -36,9 +36,8 @@
  *	0x1:0001:0
  *	0x2:0010:1
  *	0x3:0011:1
- *
- *
- *
+ *	0xF:1111:1
+ *	0x5:0101:0
 
 . Assumptions 
 Integers are represented in two’s-complement form. 
@@ -64,20 +63,19 @@ Integer constants INT_MIN and INT_MAX.
 
 int any_odd_one(unsigned x){
 	int m = 0xAAAAAAAA;
-	int n = 0xF0F0F0F0;
-	return (((x&n)&m)!=0);
-	;	
+	int z = x&m;
+	return z!=0;
 }
 
-
-
 int main(){
-	int i;
-	unsigned int arr[255];
-	for(i = 0; i<255; i++){
-		unsigned int a = i;
-        	printf("1 if there is a one in any odd bit of 0x%x, 0 if else: %i\n", a, any_odd_one(a)) ;
+	int a = 0;
+	int b = 0xFFFFFFFF;
+	int c = 0x55555555;
+	for(a = 0; a<17; a++){
+	   	printf("1 if there is a one in any odd bit of 0x%x, 0 if else: %i\n", a, any_odd_one(a)) ;
 	}
+	printf("0x%x should report 1: %i\n", b, any_odd_one(b)) ;
+	printf("0x%x should report 1: %i\n", c, any_odd_one(c)) ;
 
 	return 0;
 }
