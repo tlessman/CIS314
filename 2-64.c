@@ -30,7 +30,7 @@
  *
  *     look at all 32bits
  *     & with 0xAAAAAAAA
- *     
+ *     if other than 0x0, it has odd one
  *
  *
 
@@ -53,14 +53,15 @@ Equality (==) and inequality (!=) tests.(Some of the problems do not allow these
 Integer constants INT_MIN and INT_MAX. 
 
 */
+
 int any_odd_one(unsigned x){
 		
 	//0x2
 	//0x00000010
 	//
 
-	long -0xFFFFFF;
-	printf("%i", size_of(long);
+	
+	
 
 }
 
@@ -69,18 +70,20 @@ int any_odd_one(unsigned x){
 int main(){
 	unsigned a = 0;
 	unsigned b = 255;
-	printf("%i %i", a, b);
+	printf("%i %i ", a, b);
 
 	a^=b;
-        printf("%i %i", a, b);
+        printf("%i %i ", a, b);
 
 	b^=a;
-	printf("%i %i", a, b);
+	printf("%i %i ", a, b);
 
 	a^=b;
-	printf("%i %i", a, b);
+	printf("%i %i\n", a, b);
 
 
+	long l = 0xFFFFFFFF;
+        printf("%l size of %i\n", l, size_of(l));
 
 
 
