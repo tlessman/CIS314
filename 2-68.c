@@ -10,10 +10,12 @@ int lower_one_mask(int x){
 }
 
 int main(){ 
-	unsigned int i;
-	for (i = 0; i<32; i++){
+	unsigned int i = 7;
+//	for (i = 0; i<32; i++){
 		printf("%i: %i\n", i+1,lower_one_mask(i+1));
-	}
+//	}
+
+
 
 	return 0;
 }
