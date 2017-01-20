@@ -2,37 +2,38 @@
 
 //mask least significant bits
 //
-// 0x00000001 << 5
-// 0x00010000 
+// 0000 0001 << 5
+// 0001 0000
 //
-// 0xFFFFFFFF >> 4
-// 0x0000FFFF 
+// 
 //
-// 0x00010000
-//&0x0000FFFF
-// 0x0001FFFF 
-//
-//
+// 
 
 int lower_one_mask(int x){
-	unsigned w = 8;
+	unsigned w = 32;
 	unsigned a = 1;
-	unsigned m = 0xFFFFFFFF;
-	a<x;            //0x00010000
-	m>(w-x);         //0x0000FFFF
-	
-	return (a^m);
-	
+	unsigned m = 255;
+	a=a<<(x-1);     // x = 5; a = 1; m = 255;
+			// a = 0000 0000  0000 0000  0000 0000  0000 0001 << 4;                            
+			// a = 0000 0000  0000 0000  0000 0000  0001 0000 = 16
+			  
+	m=m>>(w-x+1);   // m = 1111 1111  1111 1111  1111 1111  1111 1111 >> | w - x + 1 |  32 - 5 + 1 = 28 ;  
+			// m = 0000 0000  0000 0000  0000 0000  0000 1111
+			
+			// a&m 0000 0000  0000 0000  0000 0000  0001 0000
+			//     0000 0000  0000 0000  0000 0000  0000 1111
+			//     0000 0000  0000 0000  0000 0000  0001 1111     
+	a&=m;           //     = 1F
+	return (a);
 
 }
 
 int main(){ 
+
 	unsigned i;
-	for (i = 0; i<5 ; i++){
-		printf("\n%i: %i\n0x%.8x\n", i+1, lower_one_mask(i+1), lower_one_mask(i+1));
-	}
-
-
+	for (i = 1; i<=32 ; i++){
+		printf("\n%u: 0x%.8x or %u\n", i, lower_one_mask(i), lower_one_mask(i));
+	}	
 
 	return 0;
 }
