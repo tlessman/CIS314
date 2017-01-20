@@ -54,6 +54,8 @@ Integer constants INT_MIN and INT_MAX.
 
 */
 
+#include <stdio.h>
+
 int any_odd_one(unsigned x){
 		
 	//0x2
@@ -83,7 +85,7 @@ int main(){
 
 
 	long l = 0xFFFFFFFF;
-        printf("%l size of %i\n", l, size_of(l));
+        printf("%l size of %i\n", l, sizeof(l));
 
 
 
