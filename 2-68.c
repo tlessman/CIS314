@@ -10,7 +10,7 @@ int main(){
 	unsigned int a = 7;
 
 	/*DEBUG CODE*/
-	unsigned int m = (FFFFFFFF>>a);
+	unsigned int m = (0xFFFFFFFF>>a);
 	printf("0x%.8x\n", a|m);
 
 
