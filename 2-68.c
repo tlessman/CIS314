@@ -2,22 +2,18 @@
 
 //mask least significant bits
 
-int lower_one_mask(int n){
-	
+int lower_one_mask(int x){
+	unsigned w = 32;
+	unsigned int m = (0xFFFFFFFF<<(w-1));
+        return (x^m)>>(w-1);
+
 }
 
-int main(){
-	unsigned int a = 7;
+int main(){ 
+	unsigned int i;
+	for (i = 0; i<32; i++){
+		printf("%i: %i\n", i+1,lower_one_mask(i+1));
+	}
 
-	/*DEBUG CODE*/
-	unsigned int m = (0xFFFFFFFF>>a);
-	printf("0x%.8x\n", a|m);
-
-
-
-
-
-
-	//printf("0x.8%x \n", lower_one_mask(a));
 	return 0;
 }
