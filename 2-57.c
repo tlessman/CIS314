@@ -7,13 +7,12 @@
  * * github.com/tlessman/CIS314
  * *
  * * 
- * /
-
-
+	void showBytes(p, l) takes an address to a byte's location, and the size of the variable type and prints the 
+	hex representation
+*/
 
 typedef unsigned char* byte_ptr; //define pointer to byte
 
-//void showBytes(p, l) takes an address to a byte's location, and the size of the variable type and prints the hex representation*/
 void show_bytes(byte_ptr p, int l){
 	int i; //init index
 	for (i=0; i<l; i++){ //for length of variable type
