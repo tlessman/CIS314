@@ -1,4 +1,10 @@
 /* 2-64.c
+ * * * Theodore Lessman
+ * * * CIS314 CRN21709
+ * * * Assignment 1
+ * * * github.com/tlessman/CIS314
+ * 
+ *
  * return 1 when any odd bit of x equals 1; 0 otherwise. assume w=32
  * follow bit-level integer coding
  * 0x00000000
@@ -71,11 +77,11 @@ int main(){
 	int a = 0;
 	int b = 0xFFFFFFFF;
 	int c = 0x55555555;
-	for(a = 0; a<17; a++){
-	   	printf("1 if there is a one in any odd bit of 0x%x, 0 if else: %i\n", a, any_odd_one(a)) ;
+	for(a = 0; a<17; a++){ //for loop only used in main for looped output
+	   	printf("1 if there is a one in any odd bit of 0x%x, 0 if else: %u\n", a, any_odd_one(a)) ;
 	}
-	printf("0x%x should report 1: %i\n", b, any_odd_one(b)) ;
-	printf("0x%x should report 1: %i\n", c, any_odd_one(c)) ;
+	printf("0x%x should report 1: %u\n", b, any_odd_one(b)) ;
+	printf("0x%x should report 1: %u\n", c, any_odd_one(c)) ;
 
 	return 0;
 }

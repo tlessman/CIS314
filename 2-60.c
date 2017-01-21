@@ -1,6 +1,21 @@
 #include <stdio.h>
 
-/* DEBUG FUNCTIONS
+/*  2-60
+ * Theodore Lessman
+ * CIS314 CRN21709
+ * Assignment 1
+ * github.com/tlessman/CIS314
+ *      
+ *
+ *
+ * replace_byte(x, i, b) takes a hex, int and char and overwrites a given section (shifted by int) of the hex with the values from the char.
+ *
+ * Examples:
+ * replace_byte(0x12345678, 2, 0xAB) --> 0x12AB5678 
+ * replace_byte(0x12345678, 0, 0xAB) --> 0x123456AB
+*/
+
+/* DEBUG FUNCTIONS ||| was using them to get quickly calculate and see relations of operations
 void pAND (int a, int m){
 	printf("0x%.8x\n", a);
 	printf("0x%.8x\n", m);
@@ -70,7 +85,7 @@ int main(){
 	printf("0x%x\n\n", replace_byte(a, 1, b));
 	printf("0x%x\n\n", replace_byte(a, 3, b));
 
-	//char 0xAB == int 0x000000AB 
+	
 
 	return 0;
 }
