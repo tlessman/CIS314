@@ -1,0 +1,38 @@
+/* SOLUTIONS DOCUMENT
+** Assignment 02
+** Theodore Lessman
+*/ 
+
+4
+convert the following hex values to decimal using 2's Compliment
+a) 0x000000FF
+255
+
+b) 0xFFFFFF00
+-254/5/6
+
+c) 0xFFFFFFFF
+-1
+
+
+5
+convert hex to dec using IEEE 754 single float
+a) 0x00000000
+
+
+b) 0x439D0000
+
+
+c) 0xC0B00000
+
+
+
+6
+convert dec to hex using IEEE 754
+a) 1.0
+
+
+b) -2.5
+
+
+c) 13.25
