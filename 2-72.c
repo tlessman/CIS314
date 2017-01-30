@@ -1,10 +1,10 @@
-
+#include <stdio.h>
 
 void copy_int(int val, void *buf, int maxbytes);
 
 int main(){
 	void* buffer;
-	printf("%b", copy_int(0xFFFFFFFF, buffer, 2)) 
+	printf("%b", copy_int(0xFFFFFFFF, buffer, 2)); 
 	return 0;
 }
 
