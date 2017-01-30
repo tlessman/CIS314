@@ -3,6 +3,12 @@
 ** Theodore Lessman
 */ 
 
+1 ||||||||||||||||||||||||||||||||||||||||||||
+a) The function does not properly retain the sign bit from the 2's compliment int
+
+
+
+
 4 ||||||||||||||||||||||||||||||||||||||||||||
 convert the following hex values to decimal using 2's Compliment
 a) 0x000000FF
