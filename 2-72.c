@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 void copy_int(int val, void *buf, int maxbytes);
 
 int main(){
-	void* buffer;
-	printf("%b", copy_int(0xFFFFFFFF, buffer, 2)); 
+	int src = 0xFFFFFFFF;
+	void* dest;
+	int maxb = sizeof(src); 
+	
+	printf("%d", copy_int(src, dest, maxb)); 
 	return 0;
 }
 
