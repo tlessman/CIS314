@@ -4,15 +4,18 @@
 void copy_int(int val, void *buf, int maxbytes);
 
 int main(){
-	int src = 0xFFFFFFFF;
-	void* dest;
-	int maxb = sizeof(src); 
+	int src = 255;
+	int dest[sizeof(int)];
+	int maxb = 2;
 	
-	printf("%d", copy_int(src, dest, maxb)); 
+	copy_int(src, dest, maxb); 
+	
+	printf("%d", *dest);
+
 	return 0;
 }
 
 void copy_int(int val, void *buf, int maxbytes) {
-	if (maxbytes-sizeof(val) >= 0)
+	if ((size_t) maxbytes-sizeof(val) >= 0)
 		memcpy(buf, (void *) &val, sizeof(val));
 } 
