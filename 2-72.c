@@ -16,6 +16,6 @@ int main(){
 }
 
 void copy_int(int val, void *buf, int maxbytes) {
-	if ((size_t) maxbytes-sizeof(val) >= 0)
+	if (maxbytes-(int)sizeof(val) >= 0)
 		memcpy(buf, (void *) &val, sizeof(val));
 } 
