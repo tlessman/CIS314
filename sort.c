@@ -22,7 +22,9 @@ int main(){
 	
 	printf("Your array before swapping: \n");
 	printArray(array, a_size);
-
+	selSortArray(array, a_size);
+	printf("Your array after swapping: \n");
+	printArray(array, a_size);
 	
 	
 	return 0;
@@ -43,9 +45,15 @@ void printArray(int* arr, int s){
 }
 
 void selSortArray(int* arr, int s){
-	int i;
-	for (){
-		
+	int i, j;
+	int small;
+	for (i = 0; i < s-1; i++){
+		small = arr+i;
+		for (j = i+1; j < s; j++){
+			if(*arr+j < arr[small])
+				small = j;
+		}
+		swap(&arr[small], arr+i);
 	}
 	
 }
