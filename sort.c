@@ -5,7 +5,7 @@ void swap(int* xp, int* yp);
 
 void printArray(int* arr, int s);
 
-int* selSortArray(int* arr, int s);
+void selSortArray(int* arr, int s);
 
 int main(){
 	int a_size;
@@ -17,7 +17,7 @@ int main(){
 	int i;
 	for (i = 0; i < a_size; i++){
 		printf("Enter value for array[%d]: ", i);
-		scanf("%d", array+i);
+		scanf("%d", (array+i));
 	}
 	
 	printf("Your array before swapping: \n");
@@ -40,7 +40,7 @@ void swap(int* xp, int* yp){
 void printArray(int* arr, int s){
 	int i;
 	for (i = 0; i < s; i++){
-		printf("%d:[%d]\n", i, *arr+i);
+		printf("%d:[%d]\n", i, *(arr+i));
 	}
 }
 
@@ -48,12 +48,12 @@ void selSortArray(int* arr, int s){
 	int i, j;
 	int small;
 	for (i = 0; i < s-1; i++){
-		small = arr+i;
-		for (j = i+1; j < s; j++){
-			if(*arr+j < arr[small])
+		small = *(arr+i);
+		for (j = i; j < s; j++){
+			if(*(arr+j) < *(arr+small))
 				small = j;
 		}
-		swap(&arr[small], arr+i);
+		swap(arr+small, arr+i);
 	}
 	
 }
