@@ -29,7 +29,7 @@ void swap(int* xp, int* yp){
 
 void printArray(int* arr){
 	int i;
-	for  (){
+	for (i = 0; i < a_size; i++){
 		printf("%d:[%d]\n", i, *arr+i);
 	}
 }
