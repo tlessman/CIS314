@@ -3,7 +3,7 @@
 
 void swap(int* xp, int* yp);
 
-void printArray(int* arr);
+void printArray(int* arr, int s);
 
 int main(){
 	int a_size;
@@ -15,7 +15,7 @@ int main(){
 		printf("Enter value for array[%d]: ", i);
 		scanf("%d", array+i);
 	}
-	printArray(array);
+	printArray(array, a_size);
 	
 	return 0;
 }
@@ -27,9 +27,9 @@ void swap(int* xp, int* yp){
 	*xp = y;
 }
 
-void printArray(int* arr){
+void printArray(int* arr, int s){
 	int i;
-	for (i = 0; i < a_size; i++){
+	for (i = 0; i < s; i++){
 		printf("%d:[%d]\n", i, *arr+i);
 	}
 }
