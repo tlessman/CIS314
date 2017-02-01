@@ -3,17 +3,23 @@
 void swap(int* xp, int* yp);
 
 int main(){
-	int a = 1, b = 2;
-	int* ap = &a, bp = &b;
-	printf("Before: %d,%d,%p,%p", a, b, ap, bp);
-	swap(ap,bp);
-	printf("After:  %d,%d,%p,%p", a, b, ap, bp);
+	int a_size;
+	printf("Enter size of array: ");
+	scanf("%d", &a_size);
+	int* array = malloc(a_size * sizeof(int));
+	int i;
+	for (i = 0; i < a_size; i++){
+		printf("Enter value for array[%d]: ", i);
+		scanf(%d, array+i);
+	}
+
 
 	return 0;
 }
 
 void swap(int* xp, int* yp){
-	int x = *xp, y = *yp;
+	int x = *xp;
+	int y = *yp;
 	*yp = x;
 	*xp = y;
 }
