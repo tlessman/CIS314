@@ -26,5 +26,5 @@ int decode2(int x, int y, int z){
 	b = b<<31;
 	b = b>>31;
 	a *= x;
-	b = a&b;
+	b = a^b;
 }
