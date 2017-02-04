@@ -36,6 +36,7 @@ int main(){
 	printf("Your array after swapping: \n");
 	printArray(array, a_size);
 	
+	free(array);	
 	
 	return 0;
 }
