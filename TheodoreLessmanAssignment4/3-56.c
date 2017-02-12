@@ -14,11 +14,21 @@
  * movl %edi, %eax       //return result
 **/
 
+/**
+ * A. x in esi, n in ebx, result in eax, mask in edi
+ * B. result = 1, mask = -1
+ * C. 
+ * D. 
+ * E. 
+ * F. 
+ *
+**/
+
 int loop(int x, int n){
-	int result = /**/;
+	int result = 1;
 	int mask;
-	for (mask = -1; mask/**/; mask = /**/){
-		result ^= /**/;
+	for (mask = -1; mask""""""; mask = """"""){
+		result ^= """""";
 	}
 	return result;
 }
