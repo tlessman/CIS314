@@ -9,10 +9,12 @@
 **/
 f:
 pushl %ebp
+movl -4(%esp), %esp
 movl %esp, %ebp
 movl $8(%ebp), %eax
 leal (%eax, %eax, 2) %eax
 movl %ebp, %esp
+movl 4(%esp), %esp
 popl %ebp
 ret
 
@@ -20,7 +22,9 @@ g:
 pushl %ebp
 movl %esp, %ebp
 movl $8(%ebp), %eax
+call f
 movl $12(%ebp), %edx
+call f
 addl %edx, %eax
 
 
