@@ -10,8 +10,8 @@
  *
  * long trace(tree_ptr tp);
  *
- * trace: //tp in %rdi
- *	movl $0, %eax
+ * trace:                     //tp in %rdi
+ *	movl $0, %eax         //:
  *	testq %rdi, $rdi
  *	je .L3
  * .L5:

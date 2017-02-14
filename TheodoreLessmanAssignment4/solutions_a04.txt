@@ -7,5 +7,23 @@
  * 	return f(a) + f(b);
  * }
 **/
+f:
+pushl %ebp
+movl %esp, %ebp
+movl $8(%ebp), %eax
+leal (%eax, %eax, 2) %eax
+movl %ebp, %esp
+popl %ebp
+ret
+
+g:
+pushl %ebp
+movl %esp, %ebp
+movl $8(%ebp), %eax
+movl $12(%ebp), %edx
+addl %edx, %eax
+
+
+
 
 
