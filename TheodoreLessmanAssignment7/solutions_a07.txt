@@ -28,4 +28,4 @@ a) CPE >= 2.00 still due to the ALU only being able to do two operations per cyc
 
 4.
 
-I have been unable to get the count to work.
+I have been unable to get the count to work. However, I expect that as number of elements (n) increases, the less optimized versions would experience increased runtimes, as the bottleneck gets backed up.  The first optimization would fare better, but I would expect the most optimized version to remain relatively close to our CPE.

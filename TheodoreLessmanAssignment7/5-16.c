@@ -5,6 +5,7 @@
 #define VECTOR_SIZE 8
 //#define VECTOR_SIZE 20
 //#define VECTOR_SIZE 100
+//#define VECTOR_SIZE 10000
 typedef long long data_t;
 typedef data_t *vec_ptr;
 
