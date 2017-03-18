@@ -1,0 +1,31 @@
+1.
+
+/*FROM FIGURE 5.12
+          Integer Single-precision Double-precision 
+Operation Latency Issue Latency Issue Latency Issue 
+Addition        1  0.33       3     1       3     1 
+Multiplication  3     1       4     1       5     1 
+Division    11–21  5–13   10–15  6–11   10–23  6–19
+*/
+
+a) see graph_a01.png
+
+b) addition with floating point takes 3 cycles
+
+c) integer multiplication is restringing to 3 cycles
+
+d) the operations can be staggered so they are at dif
+
+
+2.
+
+a) CPE >= 2.00 because of hardware limitations. The ALU gets backlogged with doing the addition for the operation and increasing index.
+
+
+3.
+
+a) CPE >= 2.00 still due to the ALU only being able to do two operations per cycle.
+
+4.
+
+I have been unable to get the count to work. However, I expect that as number of elements (n) increases, the less optimized versions would experience increased runtimes, as the bottleneck gets backed up.  The first optimization would fare better, but I would expect the most optimized version to remain relatively close to our CPE.
