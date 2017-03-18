@@ -1,0 +1,17 @@
+Assignment 8
+
+1. 
+
+2048 B cache
+  32 B block -> 8 int / block
+   4 B int -> 32 b
+offset = 16b?
+sets = 16 -> 4b
+
+[ v ] [ tag ] [     data      ]
+  1                                  
+
+[ tag                  ] [ set ] [ offset ]
+ remainder =               16b      16b
+
+
